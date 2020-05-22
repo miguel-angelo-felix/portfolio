@@ -1,0 +1,66 @@
+<app-layout>
+    <!-- Retorna um mensagem de sucess -->
+    <app-feedback *ngIf="statusFeedback" [mensagem]="returnFeedback" (clique)="fecharMensagem()" ></app-feedback>
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"> Cliente </h5>
+            
+            <!-- Input - Buscar um Cliente -->
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="nome" class="control-label">Nome:</label>
+                    <input type="text" class="form-control" [(ngModel)]="valorPesquisar">
+                </div>
+            </div>
+
+            <div class="row mt-2 mb-4">
+                <div class="col-12">
+                    <app-button css="btn btn-info" (clique)="pesquisar()" nome="Pesquisar"></app-button>
+                </div>
+            </div>
+
+            <!-- Tabela de Clientes -->
+            <div class="row">
+                <div class="col-12 procenge-container-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Codigo</th>
+                                <th>Nome</th>
+                                <th>endereco</th>
+                                <th>cidade</th>
+                                <th>cep</th>
+                                <th>uf</th>
+                                <th>telefone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cliente of listaCliente">
+                                <th><input type="radio" name="selecionar" (change)="selecionar(cliente)"></th>
+                                <th>{{cliente.codigo}}</th>
+                                <th>{{cliente.nome}}</th>
+                                <th>{{cliente.endereco}}</th>
+                                <th>{{cliente.cidade}}</th>
+                                <th>{{cliente.cep}}</th>
+                                <th>{{cliente.uf}}</th>
+                                <td>{{ cliente.telefone}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Buttons - Incluir / Alterar / Excluir -->
+            <div class="row mt-2 mb-4">
+                <div class="col-12">
+                    <app-button css="btn btn-info" (clique)="incluir()" nome="Incluir"></app-button>
+                    <app-button css="btn btn-warning ml-2" (clique)="alterar()" nome="Alterar"></app-button>
+                    <app-button css="btn btn-danger ml-2" (clique)="excluir()" nome="Excluir"></app-button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</app-layout>

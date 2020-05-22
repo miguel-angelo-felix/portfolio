@@ -1,0 +1,72 @@
+<app-layout>
+    <!-- Retorna um mensagem de sucess -->
+    <app-feedback *ngIf="statusFeedback" [mensagem]="returnFeedback" (clique)="fecharMensagem()" ></app-feedback>
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"> Cliente - {{ operacao }} </h5>
+           
+            <!-- Nome | Telefone -->
+            <div class="row">
+                <app-input-text
+                    class="form-group col-6"
+                    nome="Nome" 
+                    [valorInicial]="cliente.nome"
+                    (valorRetorno)="cliente.nome=$event" >
+                </app-input-text>
+
+                <app-input-text
+                    class="form-group col-6"
+                    nome="Telefone" 
+                    [valorInicial]="cliente.telefone"
+                    (valorRetorno)="cliente.telefone=$event" >
+                </app-input-text>
+            </div>
+            
+            <!-- Endereco -->
+            <div class="row">
+                <app-input-text
+                    class="form-group col-12"
+                    nome="Endereço" 
+                    [valorInicial]="cliente.endereco"
+                    (valorRetorno)="cliente.endereco=$event" >
+                </app-input-text>
+            </div>
+
+            <!-- Cidade | Cep | Uf -->
+            <div class="row">
+                <app-input-text
+                    class="form-group col-md-4 col-sm-12"
+                    nome="Cidade" 
+                    [valorInicial]="cliente.cidade"
+                    (valorRetorno)="cliente.cidade=$event" >
+                </app-input-text>
+
+                <app-input-text
+                    class="form-group col-md-4 col-sm-12"
+                    nome="Cep" 
+                    [valorInicial]="cliente.cep"
+                    (valorRetorno)="cliente.cep=$event" >
+                </app-input-text>
+
+                <app-select-input 
+                    class="form-group col-md-4 col-sm-12"
+                    nome="UF"
+                    [lista]="listaEstados"
+                    [valorInicial]="cliente.uf"
+                    (valorRetorno)="cliente.uf=$event">
+                </app-select-input>
+            </div>
+           
+            <!-- Buttons - Incluir / Alterar / Voltar -->
+            <div class="row mt-2 mb-4">
+                <div class="col-12">
+                    <app-button *ngIf="operacao == 'Incluir'" css="btn btn-info mr-2" (clique)="incluir()" nome="Incluir"></app-button>
+                    <app-button *ngIf="operacao == 'Alterar'" css="btn btn-info mr-2" (clique)="alterar()" nome="Alterar"></app-button>
+                    <app-button css="btn btn-secondary mr-2" (clique)="voltar()" nome="Voltar"></app-button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</app-layout>

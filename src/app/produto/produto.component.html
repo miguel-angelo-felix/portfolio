@@ -1,0 +1,62 @@
+<app-layout>
+    <!-- Retorna um mensagem de sucess -->
+    <app-feedback *ngIf="statusFeedback" [mensagem]="returnFeedback" (clique)="fecharMensagem()" ></app-feedback>
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"> Produto </h5>
+            
+            <!-- Input - Buscar um Produto -->
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="nome" class="control-label">Nome:</label>
+                    <input type="text" class="form-control" [(ngModel)]="valorPesquisar">
+                </div>
+            </div>
+
+            <div class="row mt-2 mb-4">
+                <div class="col-12">
+                    <app-button css="btn btn-info" (clique)="pesquisar()" nome="Pesquisar"></app-button>
+                </div>
+            </div>
+
+            <!-- Tabela de Produtos -->
+            <div class="row">
+                <div class="col-12 procenge-container-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Codigo</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>observacao</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let produto of listaProduto">
+                                <th><input type="radio" name="selecionar" (change)="selecionar(produto)"></th>
+                                <th>{{produto.codigo}}</th>
+                                <th>{{produto.nome}}</th>
+                                <th>{{produto.descricao}}</th>
+                                <th>{{produto.valor}}</th>
+                                <th>{{produto.observacao}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Buttons - Incluir / Alterar / Excluir -->
+            <div class="row mt-2 mb-4">
+                <div class="col-12">
+                    <app-button css="btn btn-info" (clique)="incluir()" nome="Incluir"></app-button>
+                    <app-button css="btn btn-warning ml-2" (clique)="alterar()" nome="Alterar"></app-button>
+                    <app-button css="btn btn-danger ml-2" (clique)="excluir()" nome="Excluir"></app-button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</app-layout>

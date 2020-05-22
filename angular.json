@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ProjetoLoja"
+    }
+  },
+  "defaultProject": "ProjetoLoja",
+  "cli": {
+    "analytics": "8377f4b9-f7e3-4221-b0b7-b7d122baa2a6"
+  }
 }

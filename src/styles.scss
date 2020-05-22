@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+$procenge-color-default: #18a0b7;
+$procege-color-footer:#dadada;
+$procege-color-font-footer: #989898;
+
+// Style Menu
+
+.procenge-btn-menu{
+    padding: 10px;
+    font-size: 60px;
+    width: 100px;
+    border-radius: 100%;
+    border: 1px solid $procenge-color-default;
+    color: $procenge-color-default;
+    text-align: center;
+
+    @media only screen and (max-width: 375px) {
+        width: 60px;
+        font-size: 30px;
+    }
+}
+
+.procenge-btn-menu:hover {
+    color: $procenge-color-default;
+}
+
+.procenge-container-table {
+    height: 300px;
+    overflow-y: scroll;
+    overflow-y: scroll;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $procege-color-footer;
+    color: $procege-color-font-footer;
+    text-align: center;
+}

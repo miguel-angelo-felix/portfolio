@@ -1,0 +1,53 @@
+<app-layout>
+    <!-- Retorna um mensagem de sucess -->
+    <app-feedback *ngIf="statusFeedback" [mensagem]="returnFeedback" (clique)="fecharMensagem()" ></app-feedback>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"> Produto - {{ operacao }} </h5>
+            <!-- Nome | Valor -->
+            <div class="row">
+                <app-input-text
+                    class="form-group col-6"
+                    nome="Nome" 
+                    [valorInicial]="produto.nome"
+                    (valorRetorno)="produto.nome=$event" >
+                </app-input-text>
+
+                <app-input-text
+                    class="form-group col-6"
+                    nome="Valor" 
+                    [valorInicial]="produto.valor"
+                    (valorRetorno)="produto.valor=$event" >
+                </app-input-text>
+            </div>
+            
+            <!-- Observação | Descrição -->
+            <div class="row">
+                <app-input-text
+                    class="form-group col-12"
+                    nome="Observação" 
+                    [valorInicial]="produto.observacao"
+                    (valorRetorno)="produto.observacao=$event" >
+                </app-input-text>
+
+                <app-input-text
+                    class="form-group col-12"
+                    nome="Descrição" 
+                    [valorInicial]="produto.descricao"
+                    (valorRetorno)="produto.descricao=$event" >
+                </app-input-text>
+            </div>
+
+            <!-- Buttons - Incluir / Alterar / Voltar -->
+            <div class="row mt-2 mb-4">
+                <div class="col-12">
+                    <app-button *ngIf="operacao == 'Incluir'" css="btn btn-info mr-2" (clique)="incluir()" nome="Incluir"></app-button>
+                    <app-button *ngIf="operacao == 'Alterar'" css="btn btn-info mr-2" (clique)="alterar()" nome="Alterar"></app-button>
+                    <app-button css="btn btn-secondary mr-2" (clique)="voltar()" nome="Voltar"></app-button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</app-layout>
