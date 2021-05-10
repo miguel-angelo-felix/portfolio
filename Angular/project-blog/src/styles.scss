@@ -1,0 +1,23 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
+@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+$project-blog-primary: mat-palette($mat-indigo);
+$project-blog-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$project-blog-warn: mat-palette($mat-red);
+
+$project-blog-theme: mat-light-theme((
+  color: (
+    primary: $project-blog-primary,
+    accent: $project-blog-accent,
+    warn: $project-blog-warn,
+  )
+));
+
+@include angular-material-theme($project-blog-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
