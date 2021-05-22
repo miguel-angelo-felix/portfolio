@@ -1,0 +1,29 @@
+@import '../../styles/colors.scss';
+
+.main-menu {
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 1000;
+    background-color: $blue100;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.icon-menu-bar-fixed-blog {
+    z-index: 2;
+    color: $blue90;
+    margin: 12px;
+    margin-left: 30px;
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.off-menu {
+    margin-left: -300px;
+}
+
+.on-menu {
+    margin-left: 0px !important;
+}

@@ -1,23 +1,40 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import '~@angular/material/theming';
 
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 @include mat-core();
 
-$project-blog-primary: mat-palette($mat-indigo);
-$project-blog-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-primary: mat-palette($mat-indigo);
+$app-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-warn: mat-palette($mat-red);
 
-$project-blog-warn: mat-palette($mat-red);
-
-$project-blog-theme: mat-light-theme((
+$app-default-theme: mat-light-theme((
   color: (
-    primary: $project-blog-primary,
-    accent: $project-blog-accent,
-    warn: $project-blog-warn,
+    primary: $app-primary,
+    accent: $app-accent,
+    warn: $app-warn,
   )
 ));
 
-@include angular-material-theme($project-blog-theme);
+@include angular-material-theme($app-default-theme);
+
+$app-dark-theme: mat-dark-theme((
+  color: (
+    primary: $app-primary,
+    accent: $app-accent,
+    warn: $app-warn,
+  )
+));
+
+.mat-dialog-container {
+  margin-left: -50vw;
+  height: 100vh;
+}
+
+.darkMode {
+  @include angular-material-color($app-dark-theme);
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

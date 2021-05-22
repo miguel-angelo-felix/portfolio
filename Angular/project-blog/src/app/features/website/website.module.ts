@@ -1,18 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
-/* Componentes */
-import { AppComponent } from './app.component';
-import { NavBarComponent } from './shared/layout/nav-bar/nav-bar.component';
-import { MainMenuComponent } from './shared/layout/main-menu/main-menu.component';
-
-/* Modules */
-import { AppRoutingModule } from './app-routing.module';
-
-import { WebsiteModule } from './features/website/website.module';
-
+/* Components */
+import { HomePageComponent } from './home-page/home-page.component';
+import { CharacterPageComponent } from './character-page/character-page.component';
 
 /* Material Angular */
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,19 +16,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavBarComponent,
-    MainMenuComponent,
+    HomePageComponent,
+    CharacterPageComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    WebsiteModule,
+    CommonModule,
     MatToolbarModule,
     MatSlideToggleModule,
     MatButtonModule,
@@ -47,10 +34,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    MatExpansionModule
-    
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    MatExpansionModule,
+    ReactiveFormsModule
+
+  ]
 })
-export class AppModule { }
+export class WebsiteModule { }

@@ -1,0 +1,27 @@
+@import '../../styles/colors.scss';
+
+.bar-fixed-blog {
+    background-color: $blue0;
+    height: 50px;
+    overflow: hidden;
+}
+
+.img-bar-fixed-blog {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+.icon-menu-bar-fixed-blog {
+    z-index: 2;
+    color: $blue90;
+    margin: 12px;
+    margin-left: 30px;
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
