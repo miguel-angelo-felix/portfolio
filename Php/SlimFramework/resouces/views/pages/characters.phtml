@@ -1,0 +1,922 @@
+<?php  include_once(__DIR__ . "/../include/header.phtml"); ?>
+
+<div class="background">
+    <img src="<?= IMG ?>/resouces/assets/images/bg.jpg" />
+</div>
+
+<main>
+    <div class="container">
+      <div class="heading1">
+            <p class="trn" data-trn-key="characters">Personagens</p>
+            <h1>Grand Line Adventures</h1>
+                    
+        </div>
+        <div class="box-characters">
+
+            <div class="filter-character">
+                
+                <!-- tier and search !-->
+                <div>
+                    <div class="tier">
+                        <div>
+                            <p>Tier</p>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="tier4" class="label-tier">
+                                    <p class="trn" data-trn-key="brass"> Bronze </p>
+                                    <input type="radio" id="tier4" name="tier" class="check-option" data-tier="tier4" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="tier3" class="label-tier">
+                                    <p class="trn" data-trn-key="silver">Silver</p>
+                                    <input type="radio" id="tier3" name="tier" class="check-option" data-tier="tier3" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="tier2" class="label-tier">
+                                    <p class="trn" data-trn-key="gold">Gold</p>
+                                    <input type="radio" id="tier2" name="tier" class="check-option" data-tier="tier2" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="tier1" class="label-tier">
+                                    <p class="trn" data-trn-key="diamond">Diamond</p>
+                                    <input type="radio" id="tier1" name="tier" class="check-option" data-tier="tier1" />
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="search">
+                        <div>
+                            <p class="trn" data-trn-key="search" >Search</p>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Search" id="filter-personagem">
+                            <div class="icon-search">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/search.png" alt="search" title="search" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="excess">
+                        <div>
+                            <p class="trn" data-trn-key="" >Others</p>
+                        </div>
+                        <div class="box-others">
+                            <!-- Other-Pirate -->
+                            <div>
+                                <label for="isPirate">
+                                    <img src="<?= IMG ?>/resouces/assets/images/icons/pirate.png" alt="isPirate" title="isPirate"/>
+                                    <input type="checkbox" id="isPirate" class="check-option" data-typeOther="isPirate" />
+                                </label>
+                            </div>
+                            <!-- Other-Marine -->
+                            <div>
+                                <label for="isMarine">
+                                    <img src="<?= IMG ?>/resouces/assets/images/icons/marine.png" alt="isMarine" title="isMarine"/>
+                                    <input type="checkbox" id="isMarine" class="check-option" data-typeOther="isMarine" />
+                                </label>
+                            </div>
+                            <!-- Other-Royal -->
+                            <div>
+                                <label for="isRoyal">
+                                    <img src="<?= IMG ?>/resouces/assets/images/icons/royal.png" alt="isRoyal" title="isRoyal"/>
+                                    <input type="checkbox" id="isRoyal" class="check-option" data-typeOther="isRoyal" />
+                                </label>
+                            </div>
+                            <!-- Other-Ponte -->
+                            <div>
+                                <label for="isPonte">
+                                    <img src="<?= IMG ?>/resouces/assets/images/icons/cria-ponte.png" alt="isPonte" title="isPonte"/>
+                                    <input type="checkbox" id="isPonte" class="check-option" data-typeOther="isPonte" />
+                                </label>
+                            </div>
+                            <!-- Other-Parede -->
+                            <div>
+                                <label for="isParede">
+                                    <img src="<?= IMG ?>/resouces/assets/images/icons/quebra-parede.png" alt="isParede" title="isParede"/>
+                                    <input type="checkbox" id="isParede" class="check-option" data-typeOther="isParede" />
+                                </label>
+                            </div>
+                            <!-- Other-fruit -->
+                            <div>
+                                <label for="isFruit">
+                                    <img src="<?= IMG ?>/resouces/assets/images/icons/yes-akuma.png" alt="isFruit" title="isFruit"/>
+                                    <input type="checkbox" id="isFruit" class="check-option" data-typeOther="isFruit" />
+                                </label>
+                            </div>
+                        </div>
+                    </div> 
+
+                    
+                </div>
+                <!-- end tier and search !-->
+
+                <!-- class !-->
+                <div>
+                    <div class="class">
+                        <p class="trn" data-trn-key="class">Class</p>
+                    </div>
+                    <div class="box-class">
+                        <div>
+                            <label for="support">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/support.png" alt="Support" title="Support"/>
+                                <input type="checkbox" id="support" class="check-option" data-typeClass="support" />
+                            </label>
+                            <p class="trn" data-trn-key="support"> Support</p>
+                        </div>
+                        <div>
+                            <label for="slasher">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/slasher.png" alt="Slasher" title="Slasher" />
+                                <input type="checkbox" id="slasher" class="check-option" data-typeClass="slasher" />
+                            </label>
+                            <p class="trn" data-trn-key="slasher">Slasher</p>
+                        </div>
+                        <div>
+                            <label for="bruiser">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/bruiser.png" alt="Bruiser" title="Bruiser" />
+                                <input type="checkbox" id="bruiser" class="check-option" data-typeClass="bruiser" />
+                            </label>
+                            <p class="trn" data-trn-key="bruiser"> Bruiser </p>
+                        </div>
+                        <div>
+                            <label for="specialist">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/specialist.png" alt="Specialist" title="Specialist" />
+                                <input type="checkbox" id="specialist" class="check-option" data-typeClass="specialist"/>
+                            </label>
+                            <p class="trn" data-trn-key="specialist"> Specialist </p>
+                        </div>
+                    </div>
+                    <div class="box-class">
+                        <div>
+                            <label for="tank">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/tank.png" alt="Tank" title="Tank" />
+                                <input type="checkbox" id="tank" class="check-option" data-typeClass="tank" />
+                            </label>
+                            <p class="trn" data-trn-key="tank">Tank</p>
+                        </div>
+                        <div>
+                            <label for="fighter">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/fighter.png" alt="Fighter" title="Fighter"/>
+                                <input type="checkbox" id="fighter" class="check-option" data-typeClass="fighter" />
+                            </label>
+                            <p class="trn" data-trn-key="fighter">Fighter</p>
+                        </div>
+                        <div>
+                            <label for="shooter">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/shooter.png" alt="Shooter" title="Shooter" />
+                                <input type="checkbox" id="shooter" class="check-option" data-typeClass="shooter" />
+                            </label>
+                            <p class="trn" data-trn-key="shooter">Shooter</p>
+                        </div>
+                        <div>
+                            <label for="dps">
+                                <img src="<?= IMG ?>/resouces/assets/images/icons/dps.png" alt="Dps" title="Dps" />
+                                <input type="checkbox" id="dps" class="check-option" data-typeClass="dps" />
+                            </label>
+                            <p class="trn" data-trn-key="dps">dps</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end class !-->
+            </div>
+
+            <div class="characters-start">
+                <?php $dataPos = 0;  foreach($posts as $personagem) :   ?>
+
+                <?php 
+                    // DEFININDO VALORES DO PERSONAGEM - valores resetam a cada volta no foreach
+                    $nomePersonagem         = $personagem->nomePersonagem;
+                    $slugPersonagem         = $personagem->slugPersonagem;
+                    $classePrimaria         = $personagem->classe_a;
+                    $classeSecundaria       = $personagem->classe_b;
+                    $classeTerciaria        = $personagem->classe_c;
+                    $classeQuartenaria      = $personagem->classe_d;
+                    $tierPersonagem         = $personagem->tierPersonagem;
+                    $userFruta              = $personagem->userFruta;
+                    $marine                 = $personagem->marine;
+                    $pirate                 = $personagem->pirate;
+                    $royal                  = $personagem->royal;
+                    $parede                 = $personagem->parede;
+                    $ponte                  = $personagem->ponte;
+                    
+                ?>
+
+                <!-- Tier 4 --> <!-- 4 classe -->
+                <?php if ($classeQuartenaria != "" && $tierPersonagem == "4") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier4" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier4" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 4
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeQuartenaria; ?>.png" alt="<?php echo $classeQuartenaria; ?>" title="<?php echo $classeQuartenaria; ?>"/>
+                                     </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                 <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                <!-- Tier 4 --> <!-- 3 classe -->
+                <?php elseif ($classeTerciaria != "" && $tierPersonagem == "4") : $dataPos++; ?>
+
+                    <div class="card-character check-card" 
+                        data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier4" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier4" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 4
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                 <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Tier 4 --> <!-- 2 classe -->
+                <?php elseif ($classeSecundaria != "" && $tierPersonagem == "4") : $dataPos++; ?>
+
+                    <div class="card-character check-card" 
+                        data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier4" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier4" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 4
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                 <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                  
+                </div>
+
+                <!-- Tier 4 --> <!-- 1 classe -->
+                <?php elseif( $classeSecundaria == "" && $tierPersonagem == "4" ) : $dataPos++; ?>
+
+                    <div class="card-character check-card" 
+                        data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier4" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2=""
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier4" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 4
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                
+                </div>
+
+                <!-- Tier 3 --> <!-- 4 classe -->
+                <?php elseif ($classeQuartenaria != "" && $tierPersonagem == "3") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier3" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier3" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 3
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeQuartenaria; ?>.png" alt="<?php echo $classeQuartenaria; ?>" title="<?php echo $classeQuartenaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                     <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Tier 3 --> <!-- 3 classe -->
+                <?php elseif ($classeTerciaria != "" && $tierPersonagem == "3") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier3" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier3" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 3
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                     <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                
+                </div>                 
+
+                <!-- Tier 3 --> <!-- 2 classe -->
+                <?php elseif ($classeSecundaria != "" && $tierPersonagem == "3") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier3" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier3" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 3
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                     <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                </div> 
+
+                <!-- Tier 3 --> <!-- 1 classe -->
+                <?php elseif( $classeSecundaria == "" && $tierPersonagem == "3" ) : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier3" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2=""
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier3" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 3
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                     <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                
+                </div>
+
+                <!-- Tier 2 --> <!-- 4 classe -->
+                <?php elseif ($classeQuartenaria != "" && $tierPersonagem == "2") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier2" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier2" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 2
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeQuartenaria; ?>.png" alt="<?php echo $classeQuartenaria; ?>" title="<?php echo $classeQuartenaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tier 2 --> <!-- 3 classe -->
+                <?php elseif ($classeTerciaria != "" && $tierPersonagem == "2") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier2" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier2" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 2
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div> 
+ 
+                <!-- Tier 2 --> <!-- 2 classe -->
+                <?php elseif ($classeSecundaria != "" && $tierPersonagem == "2") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier2" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier2" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 2
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tier 2 --> <!-- 1 classe -->
+                <?php elseif( $classeSecundaria == "" && $tierPersonagem == "2" ) : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier2" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2=""
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier2" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 2
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem; ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tier 1 --> <!-- 4 classe -->
+                <?php elseif ($classeQuartenaria != "" && $tierPersonagem == "1") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier1" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier1" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 1
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeQuartenaria; ?>.png" alt="<?php echo $classeQuartenaria; ?>" title="<?php echo $classeQuartenaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div>               
+
+                <!-- Tier 1 --> <!-- 3 classe -->
+                <?php elseif ($classeTerciaria != "" && $tierPersonagem == "1") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier1" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeClass3="<?php echo $classeTerciaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier1" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 1
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeTerciaria; ?>.png" alt="<?php echo $classeTerciaria; ?>" title="<?php echo $classeTerciaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div>  
+
+                <!-- Tier 1 --> <!-- 2 classe -->
+                <?php elseif ($classeSecundaria != "" && $tierPersonagem == "1") : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier1" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2="<?php echo $classeSecundaria ?>"
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier1" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 1
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classeSecundaria; ?>.png" alt="<?php echo $classeSecundaria; ?>" title="<?php echo $classeSecundaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tier 1 --> <!-- 1 classe -->
+                <?php elseif( $classeSecundaria == "" && $tierPersonagem == "1" ) : $dataPos++; ?>
+
+                    <div class="card-character check-card" data-pos="<?php echo $dataPos; ?>" 
+                        data-tier="tier1" 
+                        data-typeClass1="<?php echo $classePrimaria ?>" 
+                        data-typeClass2=""
+                        data-typeAkuma="<?php echo $userFruta ?>"
+                        data-typeMarine="<?php echo $marine ?>"
+                        data-typeParede="<?php echo $parede ?>"
+                        data-typePonte="<?php echo $ponte ?>"
+                        data-typePirate="<?php echo $pirate ?>"
+                        data-typeRoyal="<?php echo $royal ?>"
+                    >
+                        <div class="front tier1" data-pos="<?php echo $dataPos; ?>">
+                            <div class="tier">
+                                Tier 1
+                            </div>
+                            <div class="info">
+                                <div>
+                                    <img src="<?= IMG ?>/resouces/assets/images/characters/<?php echo $slugPersonagem ?>.png" alt="<?php echo $slugPersonagem ?>" title="<?php echo $slugPersonagem ?>" />
+                                </div>
+                                
+                                <div>
+                                    <?php echo $nomePersonagem ?>
+                                </div>
+                                <div>
+                                    <center>
+                                        <img src="<?= IMG ?>/resouces/assets/images/icons/<?php echo $classePrimaria; ?>.png" alt="<?php echo $classePrimaria; ?>" title="<?php echo $classePrimaria; ?>"/>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="option">
+                                <a href="#">
+                                    <div class="trn" data-trn-key="details"> Details</div>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endif; ?>
+
+        <?php endforeach; ?>
+    </div>
+
+</main>          
+
+
+<?php  include_once(__DIR__ . "/../include/script.phtml"); ?>
+
+<script src="<?= PATH ?>/resouces/assets/js/footer-relative.js"></script>
+<script async src="<?= PATH ?>/resouces/assets/js/active-filter.js"></script>
+<script async src="<?= PATH ?>/resouces/assets/js/filter-character.js"></script>
+
+<script>/*<![CDATA[*/$("#filter-personagem").keyup(function () {
+    var a = $(this).val();
+        $(".card-character").each(function () {
+            var b = $(this).text().toUpperCase().indexOf(a.toUpperCase());
+                if (b < 0) {
+                    $(this).css("display", "none")
+                } else {
+                    $(this).css("display", "block")
+                }
+        })
+    });/*]]>*/</script>  

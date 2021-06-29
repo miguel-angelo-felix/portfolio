@@ -1,0 +1,193 @@
+<?php require __DIR__ . "/../../shared/feedback.php"; ?>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+       
+        <?php include_once __DIR__ . "/../../include/navbar.phtml";  ?>
+
+        <?php include_once __DIR__ . "/../../include/sidebar.phtml";  ?>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper mb-0">
+
+            <?php include_once __DIR__ . "/../../include/content-header.phtml";  ?>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Atualizar Personagem</h3>
+                                </div>
+                                <!-- /.card-header -->
+
+                                <!-- form start -->
+                                <form role="form" action="<?= DASHBOARD ?>/manager/character/update" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" value="<?= $personagem->idPersonagem ?>">
+                                    <input type="hidden" name="iconPersonagem" value="<?= $personagem->slugPersonagem ?>">
+
+                                    <div class="card-body">
+                                        <!-- nomePersonagem | slugPersonagem | ilha_npc_id  -->
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <label for="nomePersonagem">Nome do Personagem</label>
+                                                <input type="text" value="<?= $personagem->nomePersonagem ?>" name="nomePersonagem" class="form-control" id="titulo" required placeholder="Titulo Noticia">
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label for="photoPrimary">Icon Personagem</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" name="photoPrimary" class="custom-file-input" id="photoPrimary">
+                                                        <label class="custom-file-label" for="photoPrimary">icon personagem</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                      
+                                            <div class="col-sm-4">
+                                                <label for="tierPersonagem">Tier do Personagem</label>
+                                                <select class="custom-select form-control-border" name="tierPersonagem" id="tierPersonagem">
+                                                    <option value="4" <?php if($personagem->tierPersonagem == 4) { echo "selected"; }  ?> >Tier Bronze</option>
+                                                    <option value="3" <?php if($personagem->tierPersonagem == 3) { echo "selected"; }  ?> >Tier Silver</option>
+                                                    <option value="2" <?php if($personagem->tierPersonagem == 2) { echo "selected"; }  ?> >Tier Gold</option>
+                                                    <option value="1" <?php if($personagem->tierPersonagem == 1) { echo "selected"; }  ?> >Tier Diamond</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- classA | classB | classC | classD  -->
+                                        <div class="form-group row">
+
+                                            <div class="col-sm-3">
+                                                <label for="classA">Classe Primária</label>
+                                                <select class="custom-select form-control-border" name="classA" id="classA">
+                                                    <option <?php if($personagem->classe_a == 'tank') { echo "selected"; }  ?> value="tank">tank</option>
+                                                    <option <?php if($personagem->classe_a == 'support') { echo "selected"; }  ?> value="support">support</option>
+                                                    <option <?php if($personagem->classe_a == 'fighter') { echo "selected"; }  ?> value="fighter">fighter</option>
+                                                    <option <?php if($personagem->classe_a == 'slasher') { echo "selected"; }  ?> value="slasher">slasher</option>
+                                                    <option <?php if($personagem->classe_a == 'specialist') { echo "selected"; }  ?> value="specialist">specialist</option>
+                                                    <option <?php if($personagem->classe_a == 'shooter') { echo "selected"; }  ?> value="shooter">shooter</option>
+                                                    <option <?php if($personagem->classe_a == 'bruiser') { echo "selected"; }  ?> value="bruiser">bruiser</option>
+                                                    <option <?php if($personagem->classe_a == 'dps') { echo "selected"; }  ?> value="dps">dps</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <label for="classB">Classe Secundária</label>
+                                                <select class="custom-select form-control-border" name="classB" id="classB">
+                                                    <option value="">Sem classe</option>
+                                                    <option <?php if($personagem->classe_b == 'tank') { echo "selected"; }  ?> value="tank">tank</option>
+                                                    <option <?php if($personagem->classe_b == 'support') { echo "selected"; }  ?> value="support">support</option>
+                                                    <option <?php if($personagem->classe_b == 'fighter') { echo "selected"; }  ?> value="fighter">fighter</option>
+                                                    <option <?php if($personagem->classe_b == 'slasher') { echo "selected"; }  ?> value="slasher">slasher</option>
+                                                    <option <?php if($personagem->classe_b == 'specialist') { echo "selected"; }  ?> value="specialist">specialist</option>
+                                                    <option <?php if($personagem->classe_b == 'shooter') { echo "selected"; }  ?> value="shooter">shooter</option>
+                                                    <option <?php if($personagem->classe_b == 'bruiser') { echo "selected"; }  ?> value="bruiser">bruiser</option>
+                                                    <option <?php if($personagem->classe_b == 'dps') { echo "selected"; }  ?> value="dps">dps</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <label for="classC">Classe Terciária</label>
+                                                <select class="custom-select form-control-border" name="classC" id="classC">
+                                                    <option value="">Sem classe</option>
+                                                    <option <?php if($personagem->classe_c == 'tank') { echo "selected"; }  ?> value="tank">tank</option>
+                                                    <option <?php if($personagem->classe_c == 'support') { echo "selected"; }  ?> value="support">support</option>
+                                                    <option <?php if($personagem->classe_c == 'fighter') { echo "selected"; }  ?> value="fighter">fighter</option>
+                                                    <option <?php if($personagem->classe_c == 'slasher') { echo "selected"; }  ?> value="slasher">slasher</option>
+                                                    <option <?php if($personagem->classe_c == 'specialist') { echo "selected"; }  ?> value="specialist">specialist</option>
+                                                    <option <?php if($personagem->classe_c == 'shooter') { echo "selected"; }  ?> value="shooter">shooter</option>
+                                                    <option <?php if($personagem->classe_c == 'bruiser') { echo "selected"; }  ?> value="bruiser">bruiser</option>
+                                                    <option <?php if($personagem->classe_c == 'dps') { echo "selected"; }  ?> value="dps">dps</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <label for="classD">Classe Quartenária</label>
+                                                <select class="custom-select form-control-border" name="classD" id="classD">
+                                                    <option <?php if($personagem->classe_d == '') { echo "selected"; }  ?> value="">Sem classe</option>
+                                                    <option <?php if($personagem->classe_d == 'tank') { echo "selected"; }  ?> value="tank">tank</option>
+                                                    <option <?php if($personagem->classe_d == 'support') { echo "selected"; }  ?> value="support">support</option>
+                                                    <option <?php if($personagem->classe_d == 'fighter') { echo "selected"; }  ?> value="fighter">fighter</option>
+                                                    <option <?php if($personagem->classe_d == 'slasher') { echo "selected"; }  ?> value="slasher">slasher</option>
+                                                    <option <?php if($personagem->classe_d == 'specialist') { echo "selected"; }  ?> value="specialist">specialist</option>
+                                                    <option <?php if($personagem->classe_d == 'shooter') { echo "selected"; }  ?> value="shooter">shooter</option>
+                                                    <option <?php if($personagem->classe_d == 'bruiser') { echo "selected"; }  ?> value="bruiser">bruiser</option>
+                                                    <option <?php if($personagem->classe_d == 'dps') { echo "selected"; }  ?> value="dps">dps</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- classA | classB | classC | classD  -->
+                                        <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                <label for="titulo">Usuário de Akuma no mi ?</label>
+                                                <select class="custom-select form-control-border" name="userFruta">
+                                                    <option value="isFruit" <?php if($personagem->userFruta == 'isFruit') { echo "selected"; } ?>>Sim</option>
+                                                    <option value="" <?php if($personagem->userFruta == '') { echo "selected"; } ?>>Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="titulo"> É Marine ?</label>
+                                                <select class="custom-select form-control-border" name="marine">
+                                                    <option value="isMarine"<?php if($personagem->marine == 'isMarine') { echo "selected"; } ?>>Sim</option>
+                                                    <option value=""<?php if($personagem->marine == '') { echo "selected"; } ?>>Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="titulo"> É Pirate ?</label>
+                                                <select class="custom-select form-control-border" name="pirate">
+                                                    <option value="isPirate" <?php if($personagem->pirate == 'isPirate') { echo "selected"; } ?>>Sim</option>
+                                                    <option value="" <?php if($personagem->pirate == '') { echo "selected"; } ?>>Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="titulo"> É da Realeza ?</label>
+                                                <select class="custom-select form-control-border" name="royal">
+                                                    <option value="isRoyal" <?php if($personagem->royal == 'royal') { echo "selected"; } ?>>Sim</option>
+                                                    <option value="" <?php if($personagem->royal == '') { echo "selected"; } ?>>Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="titulo"> Faz ponte ?</label>
+                                                <select class="custom-select form-control-border"  name="ponte">
+                                                    <option value="isPonte" <?php if($personagem->ponte == 'isPonte') { echo "selected"; } ?>>Sim</option>
+                                                    <option value="" <?php if($personagem->ponte == '') { echo "selected"; } ?>>Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="titulo"> Quebra parede ?</label>
+                                                <select class="custom-select form-control-border"  name="parede">
+                                                    <option value="isParede" <?php if($personagem->parede == 'isParede') { echo "selected"; } ?>>Sim</option>
+                                                    <option value="" <?php if($personagem->parede == '') { echo "selected"; } ?>>Não</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- /.card-body -->
+                
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Atualizar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+        
+                </div><!--/. container-fluid -->
+            </section>
+
+        </div>
+    </div>    
+
+    <?php include_once __DIR__ .  "/../../include/footer.phtml";  ?>
+    <?php include_once __DIR__ .  "/../../include/script.phtml";  ?>

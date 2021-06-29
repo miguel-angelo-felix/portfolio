@@ -1,0 +1,190 @@
+<?php require __DIR__ . "/../../shared/feedback.php"; ?>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+       
+        <?php include_once __DIR__ . "/../../include/navbar.phtml";  ?>
+
+        <?php include_once __DIR__ . "/../../include/sidebar.phtml";  ?>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper mb-0">
+
+            <?php include_once __DIR__ . "/../../include/content-header.phtml";  ?>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-12">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Adicionar Personagem</h3>
+                                </div>
+                                <!-- /.card-header -->
+
+                                <!-- form start -->
+                                <form role="form" action="<?= DASHBOARD ?>/manager/character/create" method="POST" enctype="multipart/form-data">
+                                    <div class="card-body">
+                                        <!-- nomePersonagem | slugPersonagem | ilha_npc_id  -->
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
+                                                <label for="nomePersonagem">Nome do Personagem</label>
+                                                <input type="text" name="nomePersonagem" class="form-control" id="titulo" required placeholder="nome do personagem">
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label for="photoPrimary">Icon Personagem</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" name="photoPrimary" required class="custom-file-input" id="photoPrimary">
+                                                        <label class="custom-file-label" for="photoPrimary">icon personagem</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                      
+                                            <div class="col-sm-4">
+                                                <label for="tierPersonagem">Tier do Personagem</label>
+                                                <select class="custom-select form-control-border" name="tierPersonagem" id="tierPersonagem">
+                                                    <option value="4">Tier Bronze</option>
+                                                    <option value="3">Tier Silver</option>
+                                                    <option value="2">Tier Gold</option>
+                                                    <option value="1">Tier Diamond</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- classA | classB | classC | classD  -->
+                                        <div class="form-group row">
+
+                                            <div class="col-sm-3">
+                                                <label for="classA">Classe Primária</label>
+                                                <select class="custom-select form-control-border" name="classA" id="classA">
+                                                    <option value="tank">tank</option>
+                                                    <option value="support">support</option>
+                                                    <option value="fighter">fighter</option>
+                                                    <option value="slasher">slasher</option>
+                                                    <option value="specialist">specialist</option>
+                                                    <option value="shooter">shooter</option>
+                                                    <option value="bruiser">bruiser</option>
+                                                    <option value="dps">dps</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <label for="classB">Classe Secundária</label>
+                                                <select class="custom-select form-control-border" name="classB" id="classB">
+                                                    <option value="">Sem classe</option>
+                                                    <option value="tank">tank</option>
+                                                    <option value="support">support</option>
+                                                    <option value="fighter">fighter</option>
+                                                    <option value="slasher">slasher</option>
+                                                    <option value="specialist">specialist</option>
+                                                    <option value="shooter">shooter</option>
+                                                    <option value="bruiser">bruiser</option>
+                                                    <option value="dps">dps</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <label for="classC">Classe Terciária</label>
+                                                <select class="custom-select form-control-border" name="classC" id="classC">
+                                                    <option value="">Sem classe</option>
+                                                    <option value="tank">tank</option>
+                                                    <option value="support">support</option>
+                                                    <option value="fighter">fighter</option>
+                                                    <option value="slasher">slasher</option>
+                                                    <option value="specialist">specialist</option>
+                                                    <option value="shooter">shooter</option>
+                                                    <option value="bruiser">bruiser</option>
+                                                    <option value="dps">dps</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <label for="classD">Classe Quartenária</label>
+                                                <select class="custom-select form-control-border" name="classD" id="classD">
+                                                    <option value="">Sem classe</option>
+                                                    <option value="tank">tank</option>
+                                                    <option value="support">support</option>
+                                                    <option value="fighter">fighter</option>
+                                                    <option value="slasher">slasher</option>
+                                                    <option value="specialist">specialist</option>
+                                                    <option value="shooter">shooter</option>
+                                                    <option value="bruiser">bruiser</option>
+                                                    <option value="dps">dps</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- isFruit | isMarine | isPirate | isRoyal | isPonte | isParede -->
+                                        <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                <label for="userFruta">Usuário de Akuma no mi ?</label>
+                                                <select class="custom-select form-control-border" name="userFruta">
+                                                    <option value="isFruit">Sim</option>
+                                                    <option value="">Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="marine"> É Marine ?</label>
+                                                <select class="custom-select form-control-border" name="marine">
+                                                    <option value="isMarine">Sim</option>
+                                                    <option value="">Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="pirate"> É Pirate ?</label>
+                                                <select class="custom-select form-control-border" name="pirate">
+                                                    <option value="isPirate">Sim</option>
+                                                    <option value="">Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="royal"> É da Realeza ?</label>
+                                                <select class="custom-select form-control-border" name="royal">
+                                                    <option value="isRoyal">Sim</option>
+                                                    <option value="">Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="ponte"> Faz ponte ?</label>
+                                                <select class="custom-select form-control-border"  name="ponte">
+                                                    <option value="isPonte">Sim</option>
+                                                    <option value="">Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label for="parede"> Quebra parede ?</label>
+                                                <select class="custom-select form-control-border"  name="parede">
+                                                    <option value="isParede">Sim</option>
+                                                    <option value="">Não</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- /.card-body -->
+                
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+        
+                </div><!--/. container-fluid -->
+            </section>
+
+        </div>
+    </div>    
+
+    <?php include_once __DIR__ .  "/../../include/footer.phtml";  ?>
+    <?php include_once __DIR__ .  "/../../include/script.phtml";  ?>

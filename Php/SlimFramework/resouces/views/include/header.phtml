@@ -1,0 +1,81 @@
+
+<!--Header-->
+    <header>
+        <div class="container">
+            <div class="box-logo">
+                <a href="<?= PATH ?>">
+                    <img src="<?= IMG ?>\resouces\assets\images\default\logo.png"  />
+                </a>
+            </div>
+
+            <div class="box-menu">
+                
+                <ul class="menu">
+                    <li <?php if($pageClass == 'home'){ echo 'class="active" '; } ?> >
+                        <a href="<?= PATH ?>" class="trn" data-trn-key="home">Home</a>
+                    </li>
+                    
+                    <li <?php if($pageClass == 'characters'){ echo 'class="active" '; } ?> >
+                        <a href="<?= PATH ?>" class="trn" data-trn-key="characters">Personagens</a>
+                    </li>
+
+                    <li <?php if($pageClass == 'tutorials'){ echo 'class="active" '; } ?> >
+                        <a href="<?= PATH ?>" class="trn" data-trn-key="tutorials">Tutoriais</a>
+                    </li>
+
+                    <li <?php if($pageClass == 'islands'){ echo 'class="active" '; } ?> >
+                        <a href="<?= PATH ?>" class="trn" data-trn-key="islands"> Ilhas</a>
+                    </li>
+
+                    <li <?php if($pageClass == 'other'){ echo 'class="active" '; } ?> >
+                        <a href="<?= PATH ?>" class="trn" data-trn-key="faq"> Links </a>
+                    </li>
+                </ul>
+                <div class="box-language">
+                    <div class="box-img">
+                        <img src="<?= IMG ?>/resouces/assets/images/icons/translation.png" />
+                    </div>
+                    <p>Language</p>
+                </div>
+
+                <div class="select-language">
+                    <div class="flag" data-language="br">
+                        <img src="<?= IMG ?>/resouces/assets/images/icons/br.png" />
+                    </div>
+                    <div class="flag" data-language="en">
+                        <img src="<?= IMG ?>/resouces/assets/images/icons/us.png" />
+                    </div>
+                    <div class="flag" data-language="pl">
+                        <img src="<?= IMG ?>/resouces/assets/images/icons/pl.png" />
+                    </div>
+                    
+                </div>
+
+                <img class="img-menu-mobile" src="<?= IMG ?>\resouces\assets/images/icons/menu.png" />
+            </div>
+        </div>
+    </header>
+    <!--Fim Header-->
+
+    <!--Menu mobile-->
+    <div class="menu-mobile mobile-off">
+        <li><a href="<?= PATH ?>" class="trn" data-trn-key="home">Home</a></li>
+        <li><a href="<?= PATH ?>/personagens" class="trn" data-trn-key="characters">Personagens</a></li>
+        <li><a href="<?= PATH ?>/tutoriais" class="trn" data-trn-key="tutorials">Tutoriais</a></li>
+        <li><a href="<?= PATH ?>/ilhas" class="trn" data-trn-key="islands"> Ilhas</a></li>
+        <li><a href="<?= PATH ?>/faq" class="trn" data-trn-key="faq"> Faq</a></li>
+
+        <div class="select-language select-language-mobile">
+            <div class="flag" data-language="br">
+                <img class="flag-img-mobile" src="<?= IMG ?>/resouces/assets/images/icons/br.png" />
+            </div>
+            <div class="flag" data-language="en">
+                <img class="flag-img-mobile" src="<?= IMG ?>/resouces/assets/images/icons/us.png" />
+            </div>
+            <div class="flag" data-language="pl">
+                <img class="flag-img-mobile" src="<?= IMG ?>/resouces/assets/images/icons/pl.png" />
+            </div>
+            
+        </div>
+    </div>
+    <!--Fim menu-->
