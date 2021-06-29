@@ -11,7 +11,7 @@
     "require": {
         "slim/slim": "^3.10",
         "slim/php-view": "^2.2",
-        "illuminate/database": "~5.8.18",
+        "illuminate/database": "~6.20.26",
         "respect/validation": "^1.1",
         "slim/flash": "^0.4.0"
     },
