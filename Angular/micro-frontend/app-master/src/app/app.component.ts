@@ -10,11 +10,11 @@ export class AppComponent {
 
   ngOnInit(){
     const scriptExtrato = document.createElement('script');
-    scriptExtrato.src = 'http://localhost:8080/extrato/main-es2022.js';
+    scriptExtrato.src = 'http://localhost:8080/extrato/main.js';
     document.body.appendChild(scriptExtrato);
 
     const scriptPagamento = document.createElement('script');
-    scriptPagamento.src = 'http://localhost:8080/pagamento/main-es2022.js';
+    scriptPagamento.src = 'http://localhost:8080/pagamento/main.js';
     document.body.appendChild(scriptPagamento);
   }
 }

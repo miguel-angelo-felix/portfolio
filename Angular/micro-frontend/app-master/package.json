@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "live-server": "npx live-server ./dist",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

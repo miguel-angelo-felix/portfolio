@@ -9,8 +9,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
