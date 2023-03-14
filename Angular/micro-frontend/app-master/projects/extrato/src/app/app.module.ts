@@ -5,11 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ComponentExtratoListComponent } from './components/component-extrato-list/component-extrato-list.component';
+import { ComponentAppMasterComponent } from 'src/app/components/component-app-master/component-app-master.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentExtratoListComponent
+    ComponentExtratoListComponent,
+    ComponentAppMasterComponent
   ],
   imports: [
     BrowserModule,
