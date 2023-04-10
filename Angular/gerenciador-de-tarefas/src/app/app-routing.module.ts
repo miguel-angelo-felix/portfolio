@@ -1,3 +1,4 @@
+import { EditarTarefaComponent } from './tarefas/editar-tarefa/editar-tarefa.component';
 import { CadastrarTarefaComponent } from './tarefas/cadastrar-tarefa/cadastrar-tarefa.component';
 import { ListarTarefaComponent } from './tarefas/listar-tarefa/listar-tarefa.component';
 import { NgModule } from '@angular/core';
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'tarefas/cadastrar',
     component: CadastrarTarefaComponent
+  },
+  {
+    path: 'tarefas/editar/:id',
+    component: EditarTarefaComponent
   }
 ];
 
