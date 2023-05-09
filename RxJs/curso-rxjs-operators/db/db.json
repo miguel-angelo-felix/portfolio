@@ -1,0 +1,11 @@
+{
+    "users": [
+        {"id": 1, "name": "Miguel", "email": "miguel@email.com", "cpf": "123"},
+        {"id": 2, "name": "Felix", "email": "felix@email.com", "cpf": "456"},
+        {"id": 3, "name": "Luciana", "email": "luciana@email.com", "cpf": "7891    "}
+    ],
+
+    "user": {
+        "cpf": "123"
+    }
+}
