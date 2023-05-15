@@ -33,6 +33,15 @@ import { CombineLatestComponent } from './components/operadores-juncao/combine-l
 import { WithLatestFromComponent } from './components/operadores-juncao/with-latest-from/with-latest-from.component';
 import { ShareReplayComponent } from './components/operadores-multicasting/share-replay/share-replay.component';
 import { ShareComponent } from './components/operadores-multicasting/share/share.component';
+import { CatchErrorComponent } from './components/operadores-tratamento-erro/catch-error/catch-error.component';
+import { RetryWhenComponent } from './components/operadores-tratamento-erro/retry-when/retry-when.component';
+import { TapComponent } from './components/operadores-utilitarios/tap/tap.component';
+import { DelayComponent } from './components/operadores-utilitarios/delay/delay.component';
+import { TimeoutComponent } from './components/operadores-utilitarios/timeout/timeout.component';
+import { EveryComponent } from './components/operadores-boleanos/every/every.component';
+import { FindComponent } from './components/operadores-boleanos/find/find.component';
+import { FindIndexComponent } from './components/operadores-boleanos/find-index/find-index.component';
+import { IsEmptyComponent } from './components/operadores-boleanos/is-empty/is-empty.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +74,16 @@ import { ShareComponent } from './components/operadores-multicasting/share/share
     CombineLatestComponent,
     WithLatestFromComponent,
     ShareReplayComponent,
-    ShareComponent
+    ShareComponent,
+    CatchErrorComponent,
+    RetryWhenComponent,
+    TapComponent,
+    DelayComponent,
+    TimeoutComponent,
+    EveryComponent,
+    FindComponent,
+    FindIndexComponent,
+    IsEmptyComponent
   ],
   imports: [
     BrowserModule,

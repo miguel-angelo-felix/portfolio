@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { concat, forkJoin, interval, map, merge, Observable, share, shareReplay, toArray, zip } from 'rxjs';
-import * as internal from 'stream';
+import { catchError, concat, delay, forkJoin, interval, map, merge, Observable, of, retry, share, shareReplay, throwError, timeout, toArray, zip } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -79,5 +79,34 @@ export class ApiService {
 
   getUserShare() {
     return this.http.get(`http://localhost:3000/users`).pipe(share());
+  }
+
+  getUserCatchError() {
+    return this.http.get(`http://localhost:3000/us`).pipe(
+      catchError(error => {
+        if (error.status === 0 && error.status != 404) {
+          return of('Ocorreu um erro na aplicação, tente mais tarde')
+        } else if (error.status === 404) {
+          console.log(error.message)
+        } else {
+          console.log('tente mais tarde')
+        }
+        return throwError(() => error)
+      }),
+      retry(2)
+    );
+  }
+
+  getUserDelay() {
+    return this.http.get(`http://localhost:3000/users`).pipe(delay(5000));
+  }
+
+  getUserTimeOut() {
+    return this.http.get(`http://localhost:3000/users`)
+      .pipe(
+        delay(5000),
+        timeout(2500),
+        catchError((error) => of('O correu um erro: ', error.message))
+      );
   }
 }
