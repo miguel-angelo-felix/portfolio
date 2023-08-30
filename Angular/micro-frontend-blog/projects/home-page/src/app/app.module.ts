@@ -21,6 +21,6 @@ export class AppModule {
   constructor(private injector: Injector) {}
   ngDoBootstrap(){
       const elem = createCustomElement(AppComponent, {injector: this.injector})
-      customElements.define('micro-app-extrato', elem);
+      customElements.define('micro-app-home-page', elem);
   }
 }

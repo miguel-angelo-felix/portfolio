@@ -1,0 +1,23 @@
+<div class="container-navBar">
+  <mat-drawer-container class="lightMode" [class.darkMode]="isDarkModeTheme()" autosize>
+    <mat-toolbar color="primary" class="toolbar">
+      <mat-icon mat-icon-button class="btn-open-menu" (click)="drawer.toggle()">menu</mat-icon>
+      <span class="title">My App</span>
+
+      <!-- # Botão de alteração de cor -->
+      <section>
+        <mat-icon class="brightness-icon">brightness_5</mat-icon>
+        <app-slide-toggle-button
+          (actionCLick)="onClickTheme($event)">
+        </app-slide-toggle-button>
+        <mat-icon>brightness_2</mat-icon>
+      </section>
+      
+    </mat-toolbar>
+    <mat-drawer #drawer class="side-nav" mode="over">
+      <a routerLink="">Noticias</a> <br>
+      <a routerLink="/characters">Personagens</a>
+    </mat-drawer>
+  </mat-drawer-container>
+</div>
+
