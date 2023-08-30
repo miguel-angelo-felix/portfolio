@@ -1,0 +1,7 @@
+1. npm init
+2. npm install express json-server json-server-auth --save
+3. criar arquivo db.json
+4. executar servidor: json-server db.json -m ./node_modules/json-server-auth
+
+Obs_01: http://localhost:3000/register - para criar um usuário
+Obs_02: http://localhost:3000/login - para logar com um usuário

@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "email": "miguel@email.com",
+      "password": "$2a$10$mqVPsyE3ZHf999impZn5beewTBMImQ58WHp/ZuffeIrqV1ZiLh/AO",
+      "id": 1
+    }
+  ],
+  "notices": [
+    {
+      "id": 1,
+      "title": "Lançamento de one piece",
+      "photo": "banner_01.png",
+      "content": "Lorem impsum..."
+    }
+  ]
+}
