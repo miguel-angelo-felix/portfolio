@@ -7,10 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
+import { WeatherHomeComponent } from './modules/weather/page/weather-home/weather-home.component';
+import { WeatherCardComponent } from './modules/weather/components/weather-card/weather-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherHomeComponent,
+    WeatherCardComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
