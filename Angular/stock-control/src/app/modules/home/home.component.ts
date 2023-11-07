@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { MessageService } from 'primeng/api';
+import { Subject, takeUntil } from 'rxjs';
 import { AuthRequest } from 'src/app/models/interfaces/auth/AuthRequest';
 import { SignupUserRequest } from 'src/app/models/interfaces/user/SignupUserRequest';
 import { UserService } from 'src/app/services/user/user.service';
@@ -14,11 +15,12 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class HomeComponent implements OnInit {
 
+  private destroy$ = new Subject<void>();
   loginCard = true;
 
   loginForm = this.formBuilder.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required]
+    email: ['miguel@email.com', Validators.required],
+    password: ['123', Validators.required]
   })
 
   singUpForm = this.formBuilder.group({
@@ -38,59 +40,66 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
   onSubmitLoginForm() {
     if ( this.loginForm.value && this.loginForm.valid) {
       this.userService.authUser(this.loginForm.value as AuthRequest)
-        .subscribe({
-          next: (response) => {
-            if (response) {
-              this.cookieService.set('USER_INFO', response?.token);
-              this.loginForm.reset();
-              this.router.navigate(['/dashboard'])
-              this.messageService.add({
-                severity: 'success',
-                summary: 'Sucesso',
-                detail: `Bem vindo de volta ${response?.name}`,
-                life: 2000
-              });
-            }
-          },
-          error: (err) => {
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (response) => {
+          if (response) {
+            this.cookieService.set('USER_INFO', response?.token);
+            this.loginForm.reset();
+            this.router.navigate(['/dashboard'])
             this.messageService.add({
-              severity: 'error',
-              summary: 'Error',
-              detail: `${err.error.error}`,
+              severity: 'success',
+              summary: 'Sucesso',
+              detail: `Bem vindo de volta ${response?.name}`,
               life: 2000
             });
           }
-        })
+        },
+        error: (err) => {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: `${err.error.error}`,
+            life: 2000
+          });
+        }
+      })
     }
   }
 
   onSubmitSingUpForm() {
     if (this.singUpForm.value && this.singUpForm.valid) {
       this.userService.signupUser(this.singUpForm.value as SignupUserRequest)
-        .subscribe({
-          next: (response) => {
-            this.singUpForm.reset();
-            this.loginCard = true;
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Sucesso',
-              detail: `Usuário ${response?.name} criado com sucesso!`,
-              life: 2000
-            });
-          },
-          error: (err) => {
-            console.log(err)
-            this.messageService.add({
-              severity: 'error',
-              summary: 'Error',
-              detail: `${err.error.error}`,
-              life: 2000
-            });
-          }
-        });
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (response) => {
+          this.singUpForm.reset();
+          this.loginCard = true;
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Sucesso',
+            detail: `Usuário ${response?.name} criado com sucesso!`,
+            life: 2000
+          });
+        },
+        error: (err) => {
+          console.log(err)
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: `${err.error.error}`,
+            life: 2000
+          });
+        }
+      });
     }
   }
 }
