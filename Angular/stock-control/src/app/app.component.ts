@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.primengConfig.ripple = true;
+    this.primengConfig.setTranslation({
+      apply: 'Aplicar',
+      clear: 'Limpar'
+    })
   }
 
 }

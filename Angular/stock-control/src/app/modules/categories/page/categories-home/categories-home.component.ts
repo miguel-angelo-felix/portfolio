@@ -31,13 +31,13 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
     private router: Router
   ) { }
   
-
-  ngOnInit() {
-    this.GetAllCategories();
+  ngOnInit(): void {
+    this.getAllCategories();
   }
 
-  GetAllCategories() {
-    this.categoriesService.getAllCategories()
+  getAllCategories() {
+    this.categoriesService
+      .getAllCategories()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (response) => {
@@ -46,38 +46,16 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
           }
         },
         error: (err) => {
+          console.log(err);
           this.messageService.add({
             severity: 'error',
-            summary: 'Error',
-            detail: 'Erro ao criar produto!',
-            life: 2500
+            summary: 'Erro',
+            detail: 'Erro ao buscar categorias!',
+            life: 3000,
           });
           this.router.navigate(['/dashboard']);
-        }
-      })
-  }
-
-  handleCategoryAction(event: EventAction): void {
-    if (event) {
-      this.ref = this.dialogService.open(CategoryFormComponent, {
-        header: event?.action,
-        width: '70%',
-        contentStyle: { overflow: 'auto'},
-        baseZIndex: 10000,
-        maximizable: true,
-        data: {
-          event: event
-        }
+        },
       });
-
-      this.ref.onClose
-        .pipe(takeUntil(this.destroy$))
-        .subscribe({
-          next: () => {
-            this.GetAllCategories();
-          }
-        })
-    }
   }
 
   handleDeleteCategoryAction(event: DeleteCategoryAction): void {
@@ -100,7 +78,7 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.destroy$))
         .subscribe({
           next: (response) => {
-            this.GetAllCategories();
+            this.getAllCategories();
             this.messageService.add({
               severity: 'success',
               summary: 'Sucesso',
@@ -110,7 +88,7 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
           },
           error: (err) => {
             console.log(err);
-            this.GetAllCategories();
+            this.getAllCategories();
             this.messageService.add({
               severity: 'error',
               summary: 'Erro',
@@ -119,8 +97,27 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
             });
           },
         });
- 
-      this.GetAllCategories();
+
+      this.getAllCategories();
+    }
+  }
+
+  handleCategoryAction(event: EventAction): void {
+    if (event) {
+      this.ref = this.dialogService.open(CategoryFormComponent, {
+        header: event?.action,
+        width: '70%',
+        contentStyle: { overflow: 'auto' },
+        baseZIndex: 10000,
+        maximizable: true,
+        data: {
+          event: event,
+        },
+      });
+
+      this.ref.onClose.pipe(takeUntil(this.destroy$)).subscribe({
+        next: () => this.getAllCategories(),
+      });
     }
   }
 
