@@ -1,0 +1,19 @@
+<div style="width: 50%; height: 50%;">
+    <app-generic-table
+        [displayedColumns]="DISPLAYED_COLUMNS"
+        [dataSource]="ELEMENT_DATA"
+        [columnsTemplate]="viewChildTemplate">
+
+        <ng-template #productName let-element="element">
+            <button mat-raised-button color="primary">{{ element }}</button>
+        </ng-template>
+
+        <ng-template #productPrice let-element="element">
+            {{ element }}
+        </ng-template>
+
+    </app-generic-table>
+</div>
+
+
+<router-outlet></router-outlet>

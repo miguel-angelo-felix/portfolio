@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  dockerproject:
+    image: teste-v1
+    container_name: docker-project
+    environment:
+      NODE_ENV: production
+    ports:
+      - 4200:80
+
+# docker run -d --name docker-project -p 4200:80 docker-project .
