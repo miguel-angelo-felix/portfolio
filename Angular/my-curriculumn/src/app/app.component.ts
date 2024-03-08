@@ -1,3 +1,4 @@
+import { ThemeService } from './core/services/theme/theme.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-curriculumn';
+
+  constructor(
+    private themeService: ThemeService
+  ){}
+
+  changeTheme(themeName: string): void {
+    this.themeService.switchTheme(themeName);
+  }
+
 }
