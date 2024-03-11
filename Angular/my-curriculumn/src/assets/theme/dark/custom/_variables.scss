@@ -4,6 +4,8 @@ $primaryDarkColor: #1E88E5;
 $primaryDarkerColor: #1976D2;
 $primaryTextColor: #ffffff;
 
+$primaryBackgroundColor: #212121;
+
 $colors: (
     "blue": #2196F3,
     "green": #4caf50,
@@ -32,41 +34,41 @@ $colors: (
 @import './variables/_misc';
 
 :root {
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --surface-a:#ffffff;
-    --surface-b:#f8f9fa;
-    --surface-c:#e9ecef;
-    --surface-d:#dee2e6;
-    --surface-e:#ffffff;
-    --surface-f:#ffffff;
-    --text-color:#495057;
-    --text-color-secondary:#6c757d;
-    --primary-color:#2196F3;
-    --primary-color-text:#ffffff;
-    --surface-0: #ffffff;
-    --surface-50: #FAFAFA;
-    --surface-100: #F5F5F5;
-    --surface-200: #EEEEEE;
-    --surface-300: #E0E0E0;
-    --surface-400: #BDBDBD;
-    --surface-500: #9E9E9E;
-    --surface-600: #757575;
-    --surface-700: #616161;
-    --surface-800: #424242;
-    --surface-900: #212121;
-    --content-padding:#{$panelContentPadding};
-    --inline-spacing:#{$inlineSpacing};
-    --border-radius:#{$borderRadius};
-    --surface-ground:#f8f9fa;
-    --surface-section:#ffffff;
-    --surface-card:#ffffff;
-    --surface-overlay:#ffffff;
-    --surface-border:#dee2e6;
-    --surface-hover:#e9ecef;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --surface-a: #212121;
+    --surface-b: #424242;
+    --surface-c: #616161;
+    --surface-d: #757575;
+    --surface-e: #9E9E9E;
+    --surface-f: #BDBDBD;
+    --text-color: #FFFFFF;
+    --text-color-secondary: #EEEEEE;
+    --primary-color: #2196F3;
+    --primary-color-text: #FFFFFF;
+    --surface-0: #212121;
+    --surface-50: #212121;
+    --surface-100: #424242;
+    --surface-200: #616161;
+    --surface-300: #757575;
+    --surface-400: #9E9E9E;
+    --surface-500: #BDBDBD;
+    --surface-600: #FFFFFF;
+    --surface-700: #FFFFFF;
+    --surface-800: #FFFFFF;
+    --surface-900: #FFFFFF;
+    --content-padding: #{$panelContentPadding};
+    --inline-spacing: #{$inlineSpacing};
+    --border-radius: #{$borderRadius};
+    --surface-ground: #212121;
+    --surface-section: #424242;
+    --surface-card: #616161;
+    --surface-overlay: #757575;
+    --surface-border: #9E9E9E;
+    --surface-hover: #BDBDBD;
     --maskbg: #{$maskBg};
     --highlight-bg: #{$highlightBg};
     --highlight-text-color: #{$highlightTextColor};
     --focus-ring: #{$focusShadow};
-    color-scheme: light;
+    color-scheme: dark;
 }

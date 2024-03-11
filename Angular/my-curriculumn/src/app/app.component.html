@@ -1,16 +1,19 @@
-<div class="px-4 py-8 md:px-6 lg:px-8">
-  <div class="flex aling-items-center mb-4">
-      <a (click)="changeTheme('md-dark-indigo')" class="mr-3 cursor-pointer">
-        <p> DARK </p>
-      </a>
-      <a (click)="changeTheme('md-light-indigo')" class="mr-3 cursor-pointer">
-        <p> LIGHT </p>
-      </a>
-      <a (click)="changeTheme('saga-blue')" class="mr-3 cursor-pointer">
-        <p> BLUE </p>
-      </a>
+<div class="_appComponentContainer container-fluid p-0 m-0">
+  <div class="_sideBar" title="Home">
+    <i class="pi pi-home" title="Projetos"></i>
+    <i class="pi pi-palette" (click)="selectTheme.toggle($event)" title="Selecionar Tema"></i>
+    <i class="pi pi-folder" title="Projetos"></i>
+    <i class="pi pi-comment" title="Entrar em contato"></i>
+  </div>
+  <div class="_content">
+    <router-outlet></router-outlet>
   </div>
 </div>
 
-
-<router-outlet></router-outlet>
+<p-overlayPanel #selectTheme>
+  <div class="d-flex">
+    <div class="_selectColors _darkColor cursor-pointer" (click)="changeTheme('md-dark-indigo')"></div>
+    <div class="_selectColors _lightColor cursor-pointer" (click)="changeTheme('md-light-indigo')"></div>
+    <div class="_selectColors _blueColor cursor-pointer" (click)="changeTheme('saga-blue')"></div>
+  </div>
+</p-overlayPanel>
